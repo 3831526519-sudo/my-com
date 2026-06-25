@@ -244,18 +244,29 @@ function getHomeWorks(categoryKey: CategoryKey) {
 }
 
 function Media({ work, detail = false }: { work: Work; detail?: boolean }) {
+  const [play, setPlay] = useState(false);
+
   if (work.mediaType === "video") {
     if (detail) {
+      if (!play) {
+        return (
+          <div className="video-poster-wrap" onClick={() => setPlay(true)}>
+            <img src={work.poster || work.cover} alt={work.title} />
+            <div className="play-button" />
+          </div>
+        );
+      }
       return (
         <video
           src={work.cover}
           controls
+          autoPlay
           playsInline
           preload="auto"
         />
       );
     }
-    // 网格视图：用封面图立即显示，不用 lazy
+    // 网格视图：用封面图立即显示
     if (work.poster) {
       return <img src={work.poster} alt={work.title} />;
     }

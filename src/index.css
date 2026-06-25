@@ -575,6 +575,49 @@ video {
   background: #0b0b0b;
 }
 
+.video-poster-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
+.video-poster-wrap img {
+  width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+  background: #0b0b0b;
+}
+
+.video-poster-wrap:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  transition: transform 0.22s ease, background 0.22s ease;
+  pointer-events: none;
+}
+
+.play-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 24px;
+  border-color: transparent transparent transparent #0b0b0b;
+}
+
 .gallery-actions {
   display: flex;
   flex-wrap: wrap;
