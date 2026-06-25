@@ -251,13 +251,13 @@ function Media({ work, detail = false }: { work: Work; detail?: boolean }) {
           src={work.cover}
           controls
           playsInline
-          preload="metadata"
+          preload="auto"
         />
       );
     }
-    // 网格视图：用封面图代替视频，加载速度飞快
+    // 网格视图：用封面图立即显示，不用 lazy
     if (work.poster) {
-      return <img src={work.poster} alt={work.title} loading="lazy" />;
+      return <img src={work.poster} alt={work.title} />;
     }
     return (
       <video
@@ -318,7 +318,7 @@ function WorkPage({ workId }: { workId: string }) {
 
   return (
     <section className="detail-page">
-      <BackgroundVideo className="detail-back-video" />
+      {work.mediaType !== "video" && <BackgroundVideo className="detail-back-video" />}
       <div className="detail-backdrop" />
       <div className="detail-shell">
         <div className="detail-intro">
