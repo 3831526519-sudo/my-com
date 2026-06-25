@@ -245,14 +245,27 @@ function getHomeWorks(categoryKey: CategoryKey) {
 
 function Media({ work, detail = false }: { work: Work; detail?: boolean }) {
   if (work.mediaType === "video") {
+    if (detail) {
+      return (
+        <video
+          src={work.cover}
+          controls
+          playsInline
+          preload="metadata"
+        />
+      );
+    }
+    // 网格视图：用封面图代替视频，加载速度飞快
+    if (work.poster) {
+      return <img src={work.poster} alt={work.title} loading="lazy" />;
+    }
     return (
       <video
         src={work.cover}
-        muted={!detail}
-        loop={!detail}
+        muted
+        loop
         playsInline
-        controls={detail}
-        preload="metadata"
+        preload="none"
       />
     );
   }

@@ -16,6 +16,10 @@ import videoFirstNight from "../视频/代表/与泽同居的第一夜.mp4?url";
 import videoRoundTable from "../视频/四方的圆桌.mp4?url";
 import videoThousandYears from "../视频/一问千年，重现眼前.mp4?url";
 import videoYanbuyouzhong from "../视频/言不由衷.mp4?url";
+import posterFirstNight from "../视频/代表/与泽同居的第一夜_poster.jpg";
+import posterRoundTable from "../视频/四方的圆桌_poster.jpg";
+import posterThousandYears from "../视频/一问千年，重现眼前_poster.jpg";
+import posterYanbuyouzhong from "../视频/言不由衷_poster.jpg";
 
 export type CategoryKey = "photo" | "video" | "design" | "code";
 
@@ -25,6 +29,7 @@ export type Work = {
   title: string;
   cover: string;
   mediaType: "image" | "video";
+  poster?: string;
   layout?: "wide" | "tall";
   featured?: boolean;
   description: string;
@@ -109,6 +114,7 @@ export const works: Work[] = [
     category: "video",
     title: "与泽同居的第一夜",
     cover: videoFirstNight,
+    poster: posterFirstNight,
     mediaType: "video",
     layout: "wide",
     featured: true,
@@ -119,6 +125,7 @@ export const works: Work[] = [
     category: "video",
     title: "四方的圆桌",
     cover: videoRoundTable,
+    poster: posterRoundTable,
     mediaType: "video",
     layout: "wide",
     description: "全国高校数字艺术设计大赛参赛作品，主要使用Libtv制作，本人负责视频中段的一分钟视频制作，以及全片分镜设计与人物、场景、物品资产图生成。采用了在场景中使用有色框标注的方法，攻克多人场景站位问题，负责片段全部人物方位正确。（获奖状况正在评审中）",
@@ -128,6 +135,7 @@ export const works: Work[] = [
     category: "video",
     title: "一问千年，重现眼前",
     cover: videoThousandYears,
+    poster: posterThousandYears,
     mediaType: "video",
     layout: "wide",
     description: "大广赛参赛作品，本人负责选题策划、分镜设计、20秒视频生成，主要使用万镜一刻制作，根据阿里云赛道千问大模型命题，把控品牌视觉调性，成片提交参赛。（获奖情况正在评审中）",
@@ -137,6 +145,7 @@ export const works: Work[] = [
     category: "video",
     title: "言不由衷",
     cover: videoYanbuyouzhong,
+    poster: posterYanbuyouzhong,
     mediaType: "video",
     layout: "wide",
     description: "带队完成3分钟命题科幻动画短片，依托即梦Seedance1.5模型完成全流程AIGC创作；针对早期模型人物不稳定问题，搭建统一提示词方案解决角色与场景一致性问题，制作场景资产图，统筹剧本、配音、素材整合全流程，获国家二等奖。",
