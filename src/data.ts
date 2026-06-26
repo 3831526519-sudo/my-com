@@ -1,38 +1,25 @@
-const CDN = "https://my-portfolio114514.oss-cn-hangzhou.aliyuncs.com";
-
-// 构建 CDN URL，自动处理中文路径
-const cdn = (path: string) =>
-  `${CDN}/${path.split("/").map(encodeURIComponent).join("/")}`;
-
-// ====== 图片 ======
-const photoQianfo = cdn("照片/代表/千佛.jpg");
-const photoYuenLong = cdn("照片/元朗.JPG");
-const photoVictoria = cdn("照片/维多利亚港.jpg");
-const photoGujin = cdn("照片/古今.jpg");
-const photoSmile = cdn("照片/微笑.jpg");
-const photoYulan = cdn("照片/玉兰.jpg");
-const photoHaitang = cdn("照片/海棠.jpg");
-
-const designEvita = cdn("设计/代表/阿根廷，别为我哭泣.jpg");
-const designRed = cdn("设计/半点红艳.jpg");
-const designMap = cdn("设计/廿载芳华，共绘版图.png");
-const designXuancheng = cdn("设计/宣城.png");
-const designSpring = cdn("设计/把春天夹进书里.png");
-
-const codeCouple = cdn("vibecoding作品/情侣配对度测验.png");
-const codeLiterature = cdn("vibecoding作品/测测你的文学精神故乡.png");
-
-// ====== 视频 ======
-const videoFirstNight = cdn("视频/代表/与泽同居的第一夜.mp4");
-const videoRoundTable = cdn("视频/四方的圆桌.mp4");
-const videoThousandYears = cdn("视频/一问千年，重现眼前.mp4");
-const videoYanbuyouzhong = cdn("视频/言不由衷.mp4");
-
-// ====== 视频封面 ======
-const posterFirstNight = cdn("视频/代表/与泽同居的第一夜_poster.jpg");
-const posterRoundTable = cdn("视频/四方的圆桌_poster.jpg");
-const posterThousandYears = cdn("视频/一问千年，重现眼前_poster.jpg");
-const posterYanbuyouzhong = cdn("视频/言不由衷_poster.jpg");
+import codeCouple from "../vibecoding作品/情侣配对度测验.png?url";
+import codeLiterature from "../vibecoding作品/测测你的文学精神故乡.png?url";
+import photoGujin from "../照片/古今.jpg?url";
+import photoHaitang from "../照片/海棠.jpg?url";
+import photoQianfo from "../照片/代表/千佛.jpg?url";
+import photoSmile from "../照片/微笑.jpg?url";
+import photoVictoria from "../照片/维多利亚港.jpg?url";
+import photoYuenLong from "../照片/元朗.JPG?url";
+import photoYulan from "../照片/玉兰.jpg?url";
+import designEvita from "../设计/代表/阿根廷，别为我哭泣.jpg?url";
+import designMap from "../设计/廿载芳华，共绘版图.png?url";
+import designRed from "../设计/半点红艳.jpg?url";
+import designSpring from "../设计/把春天夹进书里.png?url";
+import designXuancheng from "../设计/宣城.png?url";
+import videoFirstNight from "../视频/代表/与泽同居的第一夜.mp4?url";
+import videoRoundTable from "../视频/四方的圆桌.mp4?url";
+import videoThousandYears from "../视频/一问千年，重现眼前.mp4?url";
+import videoYanbuyouzhong from "../视频/言不由衷.mp4?url";
+import posterFirstNight from "../视频/代表/与泽同居的第一夜_poster.jpg";
+import posterRoundTable from "../视频/四方的圆桌_poster.jpg";
+import posterThousandYears from "../视频/一问千年，重现眼前_poster.jpg";
+import posterYanbuyouzhong from "../视频/言不由衷_poster.jpg";
 
 export type CategoryKey = "photo" | "video" | "design" | "code";
 
