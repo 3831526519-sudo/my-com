@@ -329,7 +329,6 @@ function WorkPage({ workId }: { workId: string }) {
 
   return (
     <section className="detail-page">
-      {work.mediaType !== "video" && <BackgroundVideo className="detail-back-video" />}
       <div className="detail-backdrop" />
       <div className="detail-shell">
         <div className="detail-intro">
